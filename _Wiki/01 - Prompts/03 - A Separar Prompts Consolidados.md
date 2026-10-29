@@ -223,7 +223,7 @@ Atue como Arquiteto de Software, Engenheiro de Qualidade, DevOps e Auditor Técn
 
 Diretório central:
 
-Y:\GitHub\Bruno Siqueira\__AUDITORIA
+<PASTA_DOS_REPOSITORIOS>\__AUDITORIA
 
 OBJETIVO
 
@@ -507,7 +507,7 @@ RELATÓRIO
 
 Criar:
 
-Y:\GitHub\Bruno Siqueira\__AUDITORIA\05 - Relatorios\Fase 01 - Descoberta e Governanca.md
+<PASTA_DOS_REPOSITORIOS>\__AUDITORIA\05 - Relatorios\Fase 01 - Descoberta e Governanca.md
 
 Inclua:
 
@@ -716,7 +716,7 @@ A Fase 01 — Descoberta e Governança está:
 Linha de base atual:
 
 - 149 repositórios Git identificados;
-- 105 em `Y:\GitHub\Bruno Siqueira`;
+- 105 em `<PASTA_DOS_REPOSITORIOS>`;
 - 44 em `Y:\GitHub\QAtrix Tecnologia`;
 - 14 repositórios confirmadamente multi-projeto;
 - 5 com indício de múltiplos projetos;
@@ -961,7 +961,7 @@ RELATÓRIO
 
 Criar:
 
-Y:\GitHub\Bruno Siqueira\__AUDITORIA\05 - Relatorios\Fase 02 - Triagem e Priorizacao.md
+<PASTA_DOS_REPOSITORIOS>\__AUDITORIA\05 - Relatorios\Fase 02 - Triagem e Priorizacao.md
 
 Atualizar:
 
@@ -1039,11 +1039,11 @@ SELEÇÃO
 
 Selecionar 3 a 5 P1.
 
-Incluir obrigatoriamente:
+Incluir obrigatoriamente (exemplo hipotético, ajuste ao seu caso):
 
-- `_Alephee`;
-- `_GFT`;
-- `_GFT_Bradesco_AtendeBra`.
+- um repositório pessoal de estudo, por exemplo `_Projeto_Pessoal`;
+- um repositório de trabalho, por exemplo `_Empresa_Consultoria`;
+- um repositório de projeto de cliente: caso trabalhe para uma instituição financeira do ramo bancário, por exemplo `_Empresa_Cliente_Projeto`.
 
 Priorizar risco crítico/alto, cliente, .env, CI/CD e duplicidades.
 
@@ -1057,7 +1057,7 @@ POR REPOSITÓRIO
 
 Criar auditoria individual em:
 
-Y:\GitHub\Bruno Siqueira\__AUDITORIA\04 - Auditorias
+<PASTA_DOS_REPOSITORIOS>\__AUDITORIA\04 - Auditorias
 
 Verificar:
 
@@ -1219,7 +1219,7 @@ Analisar:
 Não disparar pipeline remota.
 Não fazer deploy.
 
-DUPLICIDADE GFT
+DUPLICIDADE ENTRE REPOSITÓRIOS DE TRABALHO (exemplo: cópias do mesmo projeto em pastas diferentes)
 
 Comparar:
 
@@ -1307,7 +1307,7 @@ RELATÓRIO
 
 Criar:
 
-Y:\GitHub\Bruno Siqueira\__AUDITORIA\05 - Relatorios\Fase 03 - Lote Piloto P1.md
+<PASTA_DOS_REPOSITORIOS>\__AUDITORIA\05 - Relatorios\Fase 03 - Lote Piloto P1.md
 
 Inclua:
 

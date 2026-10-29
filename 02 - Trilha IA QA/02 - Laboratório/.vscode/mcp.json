@@ -1,0 +1,18 @@
+{
+  "servers": {
+    "arquivos-lab": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "${workspaceFolder}/dados"
+      ]
+    },
+    "cambio-lab": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["${workspaceFolder}/servidor_cambio.py"]
+    }
+  }
+}
