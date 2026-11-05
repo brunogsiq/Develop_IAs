@@ -35,6 +35,49 @@
 | **Modo não interativo** | `claude -p "..."` para usar em scripts e pipelines de CI |
 | **Integração com o GitHub** | Mencionar o agente em issues e pull requests e rodá-lo no GitHub Actions para revisar PRs e implementar tarefas (confira a configuração atual na documentação oficial) |
 
+## Estrutura de um projeto
+
+Cada arquivo e pasta ensina ao agente como trabalhar **naquele** projeto, para você não repetir as mesmas instruções toda vez. Os nomes das pastas são sempre em inglês: uma pasta chamada "ganchos" não é reconhecida.
+
+```text
+seu-projeto/
+├── CLAUDE.md                  manual do projeto, lido no início de cada sessão
+├── CLAUDE.local.md            suas preferências pessoais (não vai para o Git)
+├── .mcp.json                  integrações externas (GitHub, Jira, Slack, bancos)
+└── .claude/
+    ├── settings.json          permissões, modelo, ferramentas e hooks do time
+    ├── settings.local.json    seus ajustes pessoais (não vai para o Git)
+    ├── rules/                 regras por assunto: code-style.md, testing.md, api-conventions.md
+    ├── commands/              comandos com barra: review.md vira /review
+    ├── skills/
+    │   └── deploy/            uma pasta por skill, com SKILL.md e arquivos de apoio
+    ├── agents/                subagentes: code-reviewer.md, security-auditor.md
+    └── hooks/                 scripts automáticos: validate-bash.sh
+```
+
+| Item | Responde à pergunta | Compartilhado com o time? |
+|------|---------------------|---------------------------|
+| `CLAUDE.md` | O que é o projeto? | Sim |
+| `CLAUDE.local.md` | Quais são minhas preferências? | Não |
+| `.mcp.json` | Com quais ferramentas externas o agente conversa? | Sim |
+| `settings.json` | O que o agente pode fazer e com qual configuração? | Sim |
+| `settings.local.json` | Quais são meus ajustes de permissão? | Não |
+| `rules/` | Como escrever o código? | Sim |
+| `commands/` e `skills/` | Como fazer tarefas? | Sim |
+| `agents/` | Quem faz o quê? | Sim |
+| `hooks/` | O que checar automaticamente? | Sim |
+
+**Regras práticas**
+
+- Arquivos com `.local` no nome são pessoais: coloque-os no `.gitignore`.
+- Mantenha o `CLAUDE.md` enxuto (referência comum: abaixo de ~500 linhas). Tudo que está nele é lido em toda sessão e ocupa contexto. Detalhes vão para `rules/` (que pode valer só para certas pastas) ou para `skills/`.
+- **Skills** usam divulgação progressiva: o agente vê só nome e descrição e carrega o conteúdo completo quando a tarefa combina. Dá para ter dezenas sem pesar o contexto.
+- **Subagentes** trabalham em janela de contexto isolada: uma auditoria pode ler centenas de arquivos e devolver só a conclusão.
+- **Hooks** rodam antes ou depois de uma ação do agente: validar um comando e bloquear algo perigoso, formatar código, rodar o linter.
+- Não precisa de tudo de cara. Comece com um `CLAUDE.md` enxuto; quando ele crescer, mova partes para `rules/`; quando repetir uma tarefa, transforme em comando ou skill.
+
+> Esta estrutura muda com as versões. Confira os nomes e o formato atuais na documentação oficial.
+
 ## Fluxo de trabalho recomendado
 
 ```text
@@ -104,6 +147,7 @@ Sugestões de Automação
 
 - [ ] Sei explicar a diferença entre Claude e Claude Code
 - [ ] Tenho um `CLAUDE.md` útil no meu projeto
+- [ ] Sei o que vai em `rules/`, `commands/`, `skills/`, `agents/` e `hooks/`, e coloquei os arquivos `.local` no `.gitignore`
 - [ ] Usei o modo de planejamento antes de uma mudança grande
 - [ ] Configurei permissões sem liberar comandos perigosos
 - [ ] Criei pelo menos uma Skill

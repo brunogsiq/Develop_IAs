@@ -148,3 +148,6 @@ promptfoo-output*
 # Sistema
 Thumbs.db
 .DS_Store
+
+# Anotações pessoais (cronogramas com datas, não publicar)
+_Pessoal/

@@ -146,6 +146,21 @@ Além de código e testes, crie prompts para o dia a dia:
 | Entrevistas | Simular entrevista técnica |
 | Arquitetura | Avaliar um desenho de arquitetura e seus riscos |
 
+## Frameworks clássicos de gestão como estrutura de prompt
+
+Em vez de pedir algo vago ("me ajuda com meu projeto"), peça a análise **dentro de um framework conhecido**. A resposta sai organizada, completa e fácil de comparar. O framework só organiza o que você informar: dê contexto real (números, problemas, situação atual).
+
+| Framework | Para quê | Quando usar | Exemplo de pedido |
+|-----------|----------|-------------|-------------------|
+| **SWOT** (forças, fraquezas, oportunidades, ameaças) | Diagnosticar | Antes de decidir, para enxergar o cenário | "Faça uma SWOT deste cenário e destaque o que exige decisão ou ação agora." |
+| **Matriz GUT** (gravidade, urgência, tendência) | Priorizar | Quando tudo parece prioridade | "Priorize estes problemas com Matriz GUT e mostre os 3 que devo atacar primeiro." |
+| **SIPOC** (fornecedores, entradas, processo, saídas, clientes) | Mapear um processo | Para entender um processo de ponta a ponta ou achar gargalos | "Organize este processo em SIPOC e mostre entradas, etapas, saídas e clientes." |
+| **Balanced Scorecard** (financeira, cliente, processos internos, aprendizado) | Planejar e medir | Para transformar estratégia em objetivos, indicadores, metas e iniciativas | "Monte um Balanced Scorecard com objetivos, indicadores, metas e iniciativas." |
+
+> **Na GUT, diga a regra de cálculo.** O método clássico **multiplica** as três notas (1 a 5) e prioriza o maior resultado. Alguns materiais somam em vez de multiplicar. A ordem pode coincidir ou não, então peça explicitamente a que você quer.
+
+Os mesmos frameworks servem em QA: SWOT para avaliar a estratégia de testes, GUT para priorizar bugs e riscos, SIPOC para mapear o fluxo de uma funcionalidade antes de testá-la.
+
 ## Biblioteca pessoal de prompts
 
 Monte uma biblioteca com pelo menos 20 prompts reutilizáveis, um por arquivo, registrando **quando usar** cada um. Categorias sugeridas: QA, Front-end, Back-end, SQL, Git, GitHub, Docker, DevOps, Documentação, Arquitetura, Automação, Code Review, Debug e Pesquisa.
